@@ -58,5 +58,16 @@ let movesCount = 0,
 const timeGenerator = () => {
     seconds =+ 1;
     //minutes logic
-    if(seconds <= 60)
+    if(seconds >= 60) {
+        minutes += 1;
+        seconds = 0;
+
+    }
 }
+
+//format time before displaying 
+let secondsValue = seconds < 10 ? `0${seconds}` :
+seconds;
+let minutesValues = minutes < 1 ? `$0{minutes}` :
+minutes;
+timeValue.innerHTML = ``
