@@ -20,30 +20,30 @@ const items = [
     {name: "volleyball", image: "volley ball.png"},
     {name: "golfball", image: "golf ball.png"},
     {name: "marble", image: "marble.png"},
-    {name: "netball", image: "netball.png"},
-    {name: "squashball", image: "squashball.png"},
-    {name: "basketball", image: "basket ball.png"},
-    {name: "softball", image: "softball.png"},
-    {name: "pingpong", image: "pingpong ball.png"},
-    {name: "q-ball", image: "q ball.png"},
-    {name: "number 8", image: "number 8.png"},
-    {name: "gold Marble", image: "gold marble"},
-    {name: "moon", image: "moon.png"},
-    {name: "earth", image: "earth.png"},
-    {name: "gym ball", image: "gym ball.png"},
-    {name: "balloon", image: "balloon.png"},
-    {name: "dragon ball", image: "dragon ball.png"},
-    {name: "time stone", image: "time stone.png"},
-    {name: "dumb bell", image: "dumb bell.png"},
-    {name: "bowling ball", image: "bowling-ball"},
-    {name: "meat ball", image: "meat ball.png"},
-    {name: "light bulb", image: "light bulb.png"},
-    {name: "rocky ball", image: "rocky ball.png"},
-    {name: "sandy ball", image: "sandy ball.png"},
-    {name: "fire ball", image: "fire ball.png"},
-    {name: "silver ball", image: "silver ball.png"},
-    {name: "black ball", image: "black ball.png"},
-    {name: "grass ball", image: "grass ball"},
+    // {name: "netball", image: "netball.png"},
+    // {name: "squashball", image: "squashball.png"},
+    // {name: "basketball", image: "basket ball.png"},
+    // {name: "softball", image: "softball.png"},
+    // {name: "pingpong", image: "pingpong ball.png"},
+    // {name: "q-ball", image: "q ball.png"},
+    // {name: "number 8", image: "number 8.png"},
+    // {name: "gold Marble", image: "gold marble"},
+    // {name: "moon", image: "moon.png"},
+    // {name: "earth", image: "earth.png"},
+    // {name: "gym ball", image: "gym ball.png"},
+    // {name: "balloon", image: "balloon.png"},
+    // {name: "dragon ball", image: "dragon ball.png"},
+    // {name: "time stone", image: "time stone.png"},
+    // {name: "dumb bell", image: "dumb bell.png"},
+    // {name: "bowling ball", image: "bowling-ball"},
+    // {name: "meat ball", image: "meat ball.png"},
+    // {name: "light bulb", image: "light bulb.png"},
+    // {name: "rocky ball", image: "rocky ball.png"},
+    // {name: "sandy ball", image: "sandy ball.png"},
+    // {name: "fire ball", image: "fire ball.png"},
+    // {name: "silver ball", image: "silver ball.png"},
+    // {name: "black ball", image: "black ball.png"},
+    // {name: "grass ball", image: "grass ball"},
 ]
 
 // initial time
@@ -63,11 +63,24 @@ const timeGenerator = () => {
         seconds = 0;
 
     }
+    //format time before displaying 
+    let secondsValue = seconds < 10 ? `0${seconds}` :
+    seconds;
+    let minutesValue = minutes < 1 ? `0${minutes}` :
+    minutes;
+    timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
+};
+
+//For Calculating moves
+const movesCounter = () => {
+  movesCount += 1;
+  moves.innerHTML = `<span>Moves:</span>${movesCount}`
+};
+
+//Pick rendom objects from the items array
+const  generateRandom = (size = 4) => {
+//temporary array
+let cardValue = [];
+//size should be double (4 * 4 matrix)/2  sice pairs
 }
 
-//format time before displaying 
-let secondsValue = seconds < 10 ? `0${seconds}` :
-seconds;
-let minutesValues = minutes < 1 ? `$0{minutes}` :
-minutes;
-timeValue.innerHTML = ``
